@@ -16,7 +16,9 @@ getgenv().Rocket = false;
 getgenv().Gate = false;
 getgenv().Pass = false;
 getgenv().BombSpawn = false;
-
+getgenv().Coins = false;
+getgenv().Scorch = false;
+getgenv().Crash = false;
 
 
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
@@ -173,6 +175,30 @@ t:Toggle("Spam Gate",false, function(bool)
     print('Spam Gate is: ', bool);
     if bool then
         doGate();
+    end
+end)
+
+local loser = serv:Channel("Crash")
+
+loser:Toggle("Get Cams",false, function(bool)
+    getgenv().Scorch = bool
+    print('Get cams is: ', bool);
+    if bool then
+        doScorch();
+    end
+end)
+
+loser:Seperator()
+
+loser:Label("USE CAMS IS IN DEVELOPMENT")
+
+loser:Seperator()
+
+loser:Toggle("Use Cams",false, function(bool)
+    getgenv().Crash = bool
+    print('Use cams is: ', bool);
+    if bool then
+        doCrash();
     end
 end)
 
@@ -359,15 +385,69 @@ misc:Seperator()
 
 local z = serv:Channel("Misc")
 
-z:Button("Infinite Jump", function()
-    
-    local InfiniteJumpEnabled = true
-game:GetService("UserInputService").JumpRequest:connect(function()
-	if InfiniteJumpEnabled then
-		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-	end
+z:Toggle("Auto Coins",false, function(bool)
+    getgenv().Coins = bool
+    print('Auto Coins is: ', bool);
+    if bool then
+        doCoins();
+    end
+    DiscordLib:Notification("Notification", "You must have the downing rod in order to use this.", "Okay!")
 end)
+
+z:Button("Get Downing Rod", function()
     
+            local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+a.CFrame = CFrame.new(206, 1, -55)
+wait(1.1)
+        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+        a.CFrame = CFrame.new(-498, 155, 597)
+wait(1.1)
+end)
+
+z:Seperator()
+
+z:Button("Get Civic Duty", function()
+    
+            local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+a.CFrame = CFrame.new(206, 1, -55)
+wait(1.1)
+        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+a.CFrame = CFrame.new(-498, 155, 597)
+wait(1.1)
+			    local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+			    a.CFrame = CFrame.new(-14, 3, 16)
+
+ game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").secretportal.CFrame
+
+end)
+
+z:Seperator()
+
+z:Button("Get Tools", function()
+    for i,v in pairs(workspace:GetChildren()) do
+        if v.Name == "vending machine" then
+			firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Hander, 1)
+			wait(.1)
+			firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Hander, 0)
+		end
+    end
+        wait(1)
+		   local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+		   a.CFrame = CFrame.new(-14, 3, 16)
+      end)
+
+z:Seperator()
+
+z:Button("Infinite Jump", function()
+    local InfiniteJumpEnabled = true
+    game:GetService("UserInputService").JumpRequest:connect(function()
+        if InfiniteJumpEnabled then
+            game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+        end
+    end)
 end)
 
 z:Seperator()
@@ -381,20 +461,21 @@ z:Button("Fire Touch Interest", function()
 end)
 
 z:Seperator()
-    
-z:Button("Get Civic Duty", function()
-    
-            local a = game.Players.LocalPlayer.Character.HumanoidRootPart
 
-a.CFrame = CFrame.new(206, 1, -55)
-wait(1)
-        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+z:Button("Fire Click Detectors", function()
+    for i,v in pairs(workspace:GetDescendants()) do
+        if v:IsA("ClickDetector") then
+            fireclickdetector(v)
+        end
+    end
+end)
 
-a.CFrame = CFrame.new(-498, 155, 597)
-wait(2)
-
- game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").secretportal.CFrame
-
+z:Button("Fire Proximity Prompts", function()
+    for i,v in pairs(game.Workspace:GetDescendants()) do
+   if v:IsA("Part") and v.Name == "BanditClick" then
+       fireproximityprompt(v.Proximity)
+   end
+end
 end)
 
 z:Seperator()
@@ -622,7 +703,7 @@ end
 function doGate()
     spawn(function()
         while getgenv().Gate == true do
-                wait(0.040)
+                wait(0.04)
                 	for i,v in pairs(workspace:GetChildren()) do
 		if v.Name == "crossing" then
 			firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Button, 1)
@@ -630,6 +711,36 @@ function doGate()
 			firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Button, 0)
 		end
 	end
+end
+end)
+end
+
+function doCoins()
+    spawn(function()
+        while getgenv().Coins == true do
+                wait(0.04)
+                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").secretportal.CFrame
+                 wait(.5)
+end
+end)
+end
+
+function doScorch()
+    spawn(function()
+        while getgenv().Scorch == true do
+                wait(0.04)
+                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["vending machine"].Hander.CFrame
+                 wait(.3)
+end
+end)
+end
+
+function doCrash()
+    spawn(function()
+        while getgenv().Crash == true do
+                wait(0.04)
+                game.Players.LocalPlayer.Backpack["Scorched camera"].Parent=game.Players.LocalPlayer.Character
+                wait(.3)
 end
 end)
 end
