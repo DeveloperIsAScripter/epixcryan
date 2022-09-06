@@ -227,10 +227,8 @@ tree:Seperator()
 
 tree:Button("Gate", function()
     
-        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
-
-a.CFrame = CFrame.new(-115, 17, 436)
-
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Seat.CFrame
+    
 end)
 
 tree:Seperator()
@@ -709,26 +707,27 @@ function doCoins()
                 wait(0.04)
                  game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").secretportal.CFrame
                  wait(.5)
-end
-end)
+        end
+    end)
 end
 
 function doScorch()
     spawn(function()
         while getgenv().Scorch == true do
                 wait(0.04)
-                 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")["vending machine"].Hander.CFrame
-                 wait(.3)
+                     local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+                     a.CFrame = CFrame.new(205, 3, -63)
+        end
+    end)
 end
-end)
-end
-
+         
 function doCrash()
     spawn(function()
         while getgenv().Crash == true do
                 wait(0.04)
                 game.Players.LocalPlayer.Backpack["Scorched camera"].Parent=game.Players.LocalPlayer.Character
-                wait(.3)
+                wait(0.09)
+        end
+    end)
 end
-end)
-end
+    
