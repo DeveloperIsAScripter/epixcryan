@@ -190,7 +190,7 @@ end)
 
 loser:Seperator()
 
-loser:Label("USE CAMS IS IN DEVELOPMENT")
+loser:Label("USE CAMS IS IN DEVELOP")
 
 loser:Seperator()
 
@@ -200,6 +200,7 @@ loser:Toggle("Use Cams",false, function(bool)
     if bool then
         doCrash();
     end
+        DiscordLib:Notification("Notification", "Spam Click.", "Okay!")
 end)
 
 local tree = serv:Channel("Teleports")
@@ -427,27 +428,29 @@ end)
 z:Seperator()
 
 z:Button("Get Tools", function()
-    for i,v in pairs(workspace:GetChildren()) do
-        if v.Name == "vending machine" then
+        	for i,v in pairs(workspace:GetChildren()) do
+		if v.Name == "vending machine" then
 			firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Hander, 1)
 			wait(.1)
 			firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Hander, 0)
 		end
-    end
-        wait(1)
-		   local a = game.Players.LocalPlayer.Character.HumanoidRootPart
-		   a.CFrame = CFrame.new(-14, 3, 16)
-      end)
+        	end
+        	wait(1)
+			    local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+			    a.CFrame = CFrame.new(-14, 3, 16)
+end)
 
 z:Seperator()
 
 z:Button("Infinite Jump", function()
+    
     local InfiniteJumpEnabled = true
-    game:GetService("UserInputService").JumpRequest:connect(function()
-        if InfiniteJumpEnabled then
-            game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-        end
-    end)
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+    
 end)
 
 z:Seperator()
@@ -460,23 +463,6 @@ z:Button("Fire Touch Interest", function()
                end
 end)
 
-z:Seperator()
-
-z:Button("Fire Click Detectors", function()
-    for i,v in pairs(workspace:GetDescendants()) do
-        if v:IsA("ClickDetector") then
-            fireclickdetector(v)
-        end
-    end
-end)
-
-z:Button("Fire Proximity Prompts", function()
-    for i,v in pairs(game.Workspace:GetDescendants()) do
-   if v:IsA("Part") and v.Name == "BanditClick" then
-       fireproximityprompt(v.Proximity)
-   end
-end
-end)
 
 z:Seperator()
 
