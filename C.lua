@@ -227,8 +227,10 @@ tree:Seperator()
 
 tree:Button("Gate", function()
     
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Seat.CFrame
-    
+        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+a.CFrame = CFrame.new(-115, 17, 436)
+
 end)
 
 tree:Seperator()
