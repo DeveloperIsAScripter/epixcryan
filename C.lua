@@ -178,6 +178,91 @@ t:Toggle("Spam Gate",false, function(bool)
     end
 end)
 
+local cry = serv:Channel("Tools")
+
+cry:Button("Get Tools", function()
+        	for i,v in pairs(workspace:GetChildren()) do
+		if v.Name == "vending machine" then
+			firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Hander, 1)
+			wait(.1)
+			firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Hander, 0)
+		end
+        	end
+        	wait(0.5)
+			    local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+			    a.CFrame = CFrame.new(-14, 3, 16)
+end)
+
+cry:Seperator()
+
+cry:Button("Scorched Camera", function()
+        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+        a.CFrame = CFrame.new(205, 3, -63)
+        wait(0.3)
+        			    local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+			    a.CFrame = CFrame.new(-14, 3, 16)
+        
+end)
+
+cry:Seperator()
+
+cry:Button("Rocket Launcher", function()
+        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+        a.CFrame = CFrame.new(199, 3, -63)
+        wait(0.3)
+        			    local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+			    a.CFrame = CFrame.new(-14, 3, 16)
+        
+end)
+
+cry:Seperator()
+
+cry:Button("Buddy Buggy", function()
+        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+        a.CFrame = CFrame.new(193, 3, -63)
+        wait(0.3)
+        			    local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+			    a.CFrame = CFrame.new(-14, 3, 16)
+    
+end)
+
+cry:Seperator()
+
+cry:Button("Crowbar", function()
+        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+        a.CFrame = CFrame.new(187, 3, -63)
+        wait(0.3)
+        			    local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+			    a.CFrame = CFrame.new(-14, 3, 16)
+    
+end)
+
+cry:Seperator()
+
+cry:Button("Passport", function()
+        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+        a.CFrame = CFrame.new(206, 1, -55)
+        wait(0.3)
+			    local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+			    a.CFrame = CFrame.new(-14, 3, 16)
+			    
+end)
+
+cry:Seperator()
+
+cry:Button("Downing Rod", function()
+        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+        a.CFrame = CFrame.new(206, 1, -55)
+        wait(0.3)
+        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+        a.CFrame = CFrame.new(-498, 155, 597)
+        wait(0.3)
+        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+		a.CFrame = CFrame.new(-14, 3, 16)
+		DiscordLib:Notification("Notification", "You need to hold out and/or need a passport", "Okay!")
+        
+end)
+
 local loser = serv:Channel("Crash")
 
 loser:Toggle("Get Cams",false, function(bool)
@@ -190,7 +275,7 @@ end)
 
 loser:Seperator()
 
-loser:Label("USE CAMS IS IN DEVELOP")
+loser:Label("<USE CAMS IS CURRENTLY INACTIVE>")
 
 loser:Seperator()
 
@@ -202,6 +287,84 @@ loser:Toggle("Use Cams",false, function(bool)
     end
         DiscordLib:Notification("Notification", "Spam Click.", "Okay!")
 end)
+
+local misc = serv:Channel("Coins")
+
+misc:Toggle("Auto Coins",false, function(bool)
+    getgenv().Coins = bool
+    print('Auto Coins is: ', bool);
+    if bool then
+        doCoins();
+    end
+    DiscordLib:Notification("Notification", "You must have the downing rod in order to use this.", "Okay!")
+end)
+
+misc:Button("Get Downing Rod", function()
+    
+            local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+a.CFrame = CFrame.new(206, 1, -55)
+wait(1.1)
+        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+        a.CFrame = CFrame.new(-498, 155, 597)
+wait(1.1)
+end)
+
+misc:Seperator()
+
+misc:Button("Collect Coins", function()
+    pcall(function(Lol)
+		yes = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.tricoins["Tri-PlayCoin"].Handle.CFrame
+		wait(1)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.easycoins.PlayCoin.Handle.CFrame
+		wait(1)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.mediumcoins.PlayCoin.Handle.CFrame
+		wait(1)
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.hardcoins.PlayCoin.Handle.CFrame
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = yes
+		for _, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+	v.Parent = game.Players.LocalPlayer.Character
+	v:Activate()
+		end
+end)
+
+DiscordLib:Notification("Notification", "Wait 60 seconds until executing again ( If It Doesn't Work A Coin Is Missing )", "Okay!")
+end)
+
+misc:Seperator()
+
+misc:Button("Tri-Coin", function()
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.tricoins["Tri-PlayCoin"].Handle.CFrame
+         wait(0.60)
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = yes
+end)
+
+misc:Seperator()
+
+misc:Button("Hard-Coin", function()
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.hardcoins.PlayCoin.Handle.CFrame
+        wait(0.60)
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = yes
+end)
+
+misc:Seperator()
+
+misc:Button("Medium-Coin", function()
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.mediumcoins.PlayCoin.Handle.CFrame
+        wait(0.60)
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = yes
+end)
+
+misc:Seperator()
+
+misc:Button("Easy-Coin", function()
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.easycoins.PlayCoin.Handle.CFrame
+        wait(0.60)
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = yes
+end)
+
+misc:Seperator()
 
 local tree = serv:Channel("Teleports")
 
@@ -328,116 +491,23 @@ end)
 
 tree:Seperator()
 
-local misc = serv:Channel("Coins")
-
-misc:Button("Collect Coins", function()
-    pcall(function(Lol)
-		yes = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
-		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.tricoins["Tri-PlayCoin"].Handle.CFrame
-		wait(1)
-		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.easycoins.PlayCoin.Handle.CFrame
-		wait(1)
-		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.mediumcoins.PlayCoin.Handle.CFrame
-		wait(1)
-		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.hardcoins.PlayCoin.Handle.CFrame
-		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = yes
-		for _, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-	v.Parent = game.Players.LocalPlayer.Character
-	v:Activate()
-		end
-end)
-
-DiscordLib:Notification("Notification", "Wait 60 seconds until executing again ( If It Doesn't Work A Coin Is Missing )", "Okay!")
-end)
-
-misc:Seperator()
-
-misc:Button("Tri-Coin", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.tricoins["Tri-PlayCoin"].Handle.CFrame
-         wait(0.60)
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = yes
-end)
-
-misc:Seperator()
-
-misc:Button("Hard-Coin", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.hardcoins.PlayCoin.Handle.CFrame
-        wait(0.60)
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = yes
-end)
-
-misc:Seperator()
-
-misc:Button("Medium-Coin", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.mediumcoins.PlayCoin.Handle.CFrame
-        wait(0.60)
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = yes
-end)
-
-misc:Seperator()
-
-misc:Button("Easy-Coin", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").coinspawner.easycoins.PlayCoin.Handle.CFrame
-        wait(0.60)
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = yes
-end)
-
-misc:Seperator()
-
 local z = serv:Channel("Misc")
-
-z:Toggle("Auto Coins",false, function(bool)
-    getgenv().Coins = bool
-    print('Auto Coins is: ', bool);
-    if bool then
-        doCoins();
-    end
-    DiscordLib:Notification("Notification", "You must have the downing rod in order to use this.", "Okay!")
-end)
-
-z:Button("Get Downing Rod", function()
-    
-            local a = game.Players.LocalPlayer.Character.HumanoidRootPart
-
-a.CFrame = CFrame.new(206, 1, -55)
-wait(1.1)
-        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
-        a.CFrame = CFrame.new(-498, 155, 597)
-wait(1.1)
-end)
-
-z:Seperator()
 
 z:Button("Get Civic Duty", function()
     
             local a = game.Players.LocalPlayer.Character.HumanoidRootPart
 
 a.CFrame = CFrame.new(206, 1, -55)
-wait(1.1)
+wait(0.3)
         local a = game.Players.LocalPlayer.Character.HumanoidRootPart
 
 a.CFrame = CFrame.new(-498, 155, 597)
-wait(1.1)
+wait(0.3)
 			    local a = game.Players.LocalPlayer.Character.HumanoidRootPart
 			    a.CFrame = CFrame.new(-14, 3, 16)
 
  game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").secretportal.CFrame
 
-end)
-
-z:Seperator()
-
-z:Button("Get Tools", function()
-        	for i,v in pairs(workspace:GetChildren()) do
-		if v.Name == "vending machine" then
-			firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Hander, 1)
-			wait(.1)
-			firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Hander, 0)
-		end
-        	end
-        	wait(1)
-			    local a = game.Players.LocalPlayer.Character.HumanoidRootPart
-			    a.CFrame = CFrame.new(-14, 3, 16)
 end)
 
 z:Seperator()
@@ -717,6 +787,7 @@ function doScorch()
                 wait(0.04)
                      local a = game.Players.LocalPlayer.Character.HumanoidRootPart
                      a.CFrame = CFrame.new(205, 3, -63)
+                     wait(.9)
         end
     end)
 end
@@ -726,7 +797,6 @@ function doCrash()
         while getgenv().Crash == true do
                 wait(0.04)
                 game.Players.LocalPlayer.Backpack["Scorched camera"].Parent=game.Players.LocalPlayer.Character
-                wait(0.09)
         end
     end)
 end
