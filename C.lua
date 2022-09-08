@@ -308,6 +308,8 @@ misc:Toggle("Auto Coins",false, function(bool)
     end
 end)
 	
+misc:Seperator()
+	
 misc:Button("Get Civic Duty", function()
     
             local a = game.Players.LocalPlayer.Character.HumanoidRootPart
