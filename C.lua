@@ -308,8 +308,6 @@ misc:Toggle("Auto Coins",false, function(bool)
     end
 end)
 	
-	misc:Seperator()
-	
 misc:Button("Get Civic Duty", function()
     
             local a = game.Players.LocalPlayer.Character.HumanoidRootPart
@@ -326,6 +324,8 @@ wait(0.3)
  game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").secretportal.CFrame
 
 end)
+
+misc:Seperator()
 
 misc:Button("Get Downing Rod", function()
     
