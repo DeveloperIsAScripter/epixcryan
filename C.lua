@@ -184,7 +184,7 @@ end)
 
 local cry = serv:Channel("Tools")
 
-cry:Label("<THIS WILL RETURN YOU TO SPAWN!>")
+cry:Label("<If you get sent back to the spawner your ping is high>")
 
 cry:Button("Get Tools", function()
         	for i,v in pairs(workspace:GetChildren()) do
@@ -306,6 +306,23 @@ misc:Toggle("Auto Coins",false, function(bool)
     if bool then
         doCoins();
     end
+end)
+	
+z:Button("Get Civic Duty", function()
+    
+            local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+a.CFrame = CFrame.new(206, 1, -55)
+wait(0.3)
+        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+a.CFrame = CFrame.new(-498, 155, 597)
+wait(0.3)
+			    local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+			    a.CFrame = CFrame.new(-14, 3, 16)
+
+ game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").secretportal.CFrame
+
 end)
 
 misc:Button("Get Downing Rod", function()
@@ -512,24 +529,42 @@ tree:Seperator()
 local z = serv:Channel("Misc")
 
 z:Label("<Misconfigurations If You Want>")
-
-z:Button("Get Civic Duty", function()
-    
-            local a = game.Players.LocalPlayer.Character.HumanoidRootPart
-
-a.CFrame = CFrame.new(206, 1, -55)
-wait(0.3)
-        local a = game.Players.LocalPlayer.Character.HumanoidRootPart
-
-a.CFrame = CFrame.new(-498, 155, 597)
-wait(0.3)
-			    local a = game.Players.LocalPlayer.Character.HumanoidRootPart
-			    a.CFrame = CFrame.new(-14, 3, 16)
-
- game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").secretportal.CFrame
-
+	
+z:Button("Low Graphics", function()
+			
+			local g = game
+local w = g.Workspace
+local l = g.Lighting
+local t = w.Terrain
+t.WaterWaveSize = 0
+t.WaterWaveSpeed = 0
+t.WaterReflectance = 0
+t.WaterTransparency = 0
+l.GlobalShadows = false
+l.FogEnd = 9e9
+l.Brightness = 0
+settings().Rendering.QualityLevel = "Level01"
+for i, v in pairs(g:GetDescendants()) do
+    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+        v.BlastRadius = 1
+    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+        v.Enabled = false
+    elseif v:IsA("MeshPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+        v.TextureID = 10385902758728957
+    end
+end
 end)
-
+	
 z:Seperator()
 
 z:Button("Infinite Jump", function()
