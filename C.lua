@@ -32,7 +32,7 @@ local tgls = serv:Channel("Carts")
 
 
 
-tgls:Label("Spam")
+tgls:Label("<Cart Toggles>")
 
 tgls:Toggle("Spawn Carts",false, function(bool)
     getgenv().Spawn = bool
@@ -126,6 +126,8 @@ tgls:Seperator()
 
 local g = serv:Channel("Bomb Carts")
 
+g:Label("<Bomb Cart Toggles>")
+
 g:Toggle("Spawn Bomb Carts",false, function(bool)
     getgenv().BombSpawn = bool
     print('Spawn Bomb Carts is: ', bool);
@@ -158,6 +160,8 @@ g:Seperator()
 
 local t = serv:Channel("Gates")
 
+t:Label("<100+ Social Credit!>")
+
 t:Button("Use Gate", function()
     	for i,v in pairs(workspace:GetChildren()) do
 		if v.Name == "crossing" then
@@ -179,6 +183,8 @@ t:Toggle("Spam Gate",false, function(bool)
 end)
 
 local cry = serv:Channel("Tools")
+
+cry:Label("<THIS WILL RETURN YOU TO SPAWN!>")
 
 cry:Button("Get Tools", function()
         	for i,v in pairs(workspace:GetChildren()) do
@@ -265,6 +271,8 @@ end)
 
 local loser = serv:Channel("Crash")
 
+loser:Label("<You'll Need Many Coins For This>")
+
 loser:Toggle("Get Cams",false, function(bool)
     getgenv().Scorch = bool
     print('Get cams is: ', bool);
@@ -290,13 +298,14 @@ end)
 
 local misc = serv:Channel("Coins")
 
+misc:Label("<Get A Downing Rod For This.>")
+
 misc:Toggle("Auto Coins",false, function(bool)
     getgenv().Coins = bool
     print('Auto Coins is: ', bool);
     if bool then
         doCoins();
     end
-    DiscordLib:Notification("Notification", "You must have the downing rod in order to use this.", "Okay!")
 end)
 
 misc:Button("Get Downing Rod", function()
@@ -367,6 +376,8 @@ end)
 misc:Seperator()
 
 local tree = serv:Channel("Teleports")
+
+tree:Label("<saudi arabia gang - hviqz>")
 
 tree:Button("Spawn", function()
     
@@ -443,6 +454,13 @@ end)
 
 tree:Seperator()
 
+tree:Button("Secret Portal", function()
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").secretportal.CFrame
+
+end)
+
+tree:Seperator()
+
 tree:Button("Civic Duty Platform", function()
     
     local a = game.Players.LocalPlayer.Character.HumanoidRootPart
@@ -492,6 +510,8 @@ end)
 tree:Seperator()
 
 local z = serv:Channel("Misc")
+
+z:Label("<Misconfigurations If You Want>")
 
 z:Button("Get Civic Duty", function()
     
@@ -547,7 +567,11 @@ z:Seperator()
 local lbls = serv:Channel("Credits")
 
 lbls:Label("hviqz#0001 made this script!")
+lbls:Seperator()
+
 lbls:Label("UI by dawid#7205")
+lbls:Seperator()
+
 lbls:Label("Testers: Kham#0001")
 
 
