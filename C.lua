@@ -1,5 +1,4 @@
-if game.PlaceId == 7419509075 then
-    
+
     
     
 getgenv().Spawn = false;
