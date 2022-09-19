@@ -60,8 +60,14 @@ ark:Button("Redeem Codes",function()
     }
     game:GetService("ReplicatedStorage").Remotes.TwitterCode:InvokeServer(unpack(args))
     wait(.1)
-    end
-)
+	wait(.1)
+	local args = {
+		[1] = "gem900"
+		}
+	game:GetService("ReplicatedStorage").Remotes.TwitterCode:InvokeServer(unpack(args))
+	wait(.1)
+	end
+	)
 
 ark:Seperator()
 
