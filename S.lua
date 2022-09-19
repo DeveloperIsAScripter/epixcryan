@@ -1,4 +1,4 @@
-if game.PlaceId == 7047488135 then
+
     
 getgenv().Speed = false;
 getgenv().Orbs = false;
