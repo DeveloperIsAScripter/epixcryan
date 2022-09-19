@@ -341,7 +341,6 @@ cred:Seperator()
 cred:Label("UI by dawid#7205")
 
 cred:Seperator()
-end
 
 function doSpeed()
     spawn(function()
