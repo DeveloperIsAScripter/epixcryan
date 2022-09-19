@@ -418,6 +418,8 @@ gun:Button("Choose Map",function()
     a.CFrame = CFrame.new(0, 155, 36)
 end)
 
+gun:Seperator()
+
 gun:Button("Map", function()
         local a = game.Players.LocalPlayer.Character.HumanoidRootPart
     a.CFrame = CFrame.new(-100, 15, 0)
