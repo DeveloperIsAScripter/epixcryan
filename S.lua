@@ -155,44 +155,6 @@ end)
 
 eg:Seperator()
 
-local lol = serv:Channel("Obby")
-
-lol:Button("Alien", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Model.Ice.CFrame
-end)
-
-lol:Seperator()
-
-lol:Button("Ice", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Model.Model.Model.Lava.CFrame
-end)
-
-lol:Seperator()
-
-lol:Button("Moon", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Model.Model.Model.Model.Model.Moon.CFrame
-end)
-
-lol:Seperator()
-
-lol:Button("Candyland", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Model.Model.Candyland.CFrame
-end)
-
-lol:Seperator()
-
-lol:Button("Adventure Time", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Model.Model.Model.Model.Model["Adventure Time"].CFrame
-end)
-
-lol:Seperator()
-
-lol:Button("Bikini Bottom", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Model.Model.Model.Model.Model["Bikini Bottom"].CFrame
-end)
-
-lol:Seperator()
-
 local goo = serv:Channel("Teleports")
 
 goo:Button("Spawn", function()
