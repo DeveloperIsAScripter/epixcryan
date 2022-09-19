@@ -398,13 +398,14 @@ cun:Button("Village",function()
     fireclickdetector(game:GetService("Workspace").MinigameChoices.Village.Head.ClickDetector,math.huge)
 end)
 
+cun:Seperator()
+
 cun:Button("Bridge",function()
     fireclickdetector(game:GetService("Workspace").MinigameChoices.Bridge.Head.ClickDetector,math.huge)
 end)
 
 cun:Seperator()
 
-cun:Seperator()
 local gun = serv:Channel("Teleports")
 
 gun:Button("Spawn",function()
