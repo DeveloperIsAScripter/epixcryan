@@ -1,11 +1,27 @@
-if game.PlaceId == 7419509075 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hellamane/epixcryan/main/C.lua"))()
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
+local Scripts = {
+    [7419509075] = "https://raw.githubusercontent.com/hellamane/epixcryan/main/C.lua",
+    [7047488135] = "https://raw.githubusercontent.com/hellamane/epixcryan/main/E.lua",
+    [102131021] = "https://raw.githubusercontent.com/hellamane/epixcryan/main/F.lua",
+    [10320240572] = "https://raw.githubusercontent.com/hellamane/epixcryan/main/S.lua"
+}
+
+local Check = Scripts[game.PlaceId] or Scripts[game.GameId]
+local Log = loadstring(game:HttpGet("https://raw.githubusercontent.com/Belkworks/synlog/master/init.lua", "Log"))()
+
+if Check then
+    local Success, Result = pcall(function()
+        return game:HttpGet(Check)
+    end)
+
+    if Success then
+        loadstring(Result, "Loader")()
     else
-        if game.PlaceId == 7047488135 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/hellamane/epixcryan/main/S.lua"))()
-        else
-        if game.PlaceId == 102131021 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/hellamane/epixcryan/main/F.lua"))()
-            end
-        end
+        Log:error(("Failed to load: %s"):format(Result))
     end
+else
+    Log:error("Game not supported!")
+end 
