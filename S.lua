@@ -77,19 +77,19 @@ ark:Seperator()
 
 local eg = serv:Channel("Eggs")
 
-eg:Button("Egg1", function()
+eg:Button("Common Egg", function()
     game:GetService("ReplicatedStorage").Remotes.CanBuyEgg:InvokeServer("EggOne")
 end)
 
 eg:Seperator()
 
-eg:Button("Egg2", function()
+eg:Button("Spots Egg", function()
     game:GetService("ReplicatedStorage").Remotes.CanBuyEgg:InvokeServer("EggTwo")
 end)
 
 eg:Seperator()
 
-eg:Button("Egg3", function()
+eg:Button("Lightning Egg", function()
     game:GetService("ReplicatedStorage").Remotes.CanBuyEgg:InvokeServer("EggThree")
 end)
 
@@ -158,7 +158,8 @@ eg:Seperator()
 local goo = serv:Channel("Teleports")
 
 goo:Button("Spawn", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Teleports.Spawn.CFrame
+		local a = game.Players.LocalPlayer.Character.HumanoidRootPart
+		a.CFrame = CFrame.new(1400, 197, -462)
 end)
 
 goo:Seperator()
