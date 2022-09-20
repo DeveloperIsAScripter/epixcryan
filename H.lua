@@ -271,18 +271,18 @@ end)
 
 moon:Seperator()
 
-moon:Button("Chroma Egg",function()
+moon:Button("Cool Egg",function()
     local args = {
-    [1] = "Chroma Egg",
+    [1] = "Cool Egg",
     [2] = "Buy1"}
 game:GetService("ReplicatedStorage").GameClient.Events.RemoteFunction.BuyEgg:InvokeServer(unpack(args))
 end)
 
 moon:Seperator()
 
-moon:Button("Cool Egg",function()
+moon:Button("Chroma Egg",function()
     local args = {
-    [1] = "Cool Egg",
+    [1] = "Chroma Egg",
     [2] = "Buy1"}
 game:GetService("ReplicatedStorage").GameClient.Events.RemoteFunction.BuyEgg:InvokeServer(unpack(args))
 end)
@@ -375,7 +375,7 @@ function doEgg()
         while getgenv().Egg == true do
                 wait(0.040)
                 local args = {
-                    [1] = "Cool Egg",
+                    [1] = "Chroma Egg",
                     [2] = "Buy1"}
                 game:GetService("ReplicatedStorage").GameClient.Events.RemoteFunction.BuyEgg:InvokeServer(unpack(args))
                 wait(.1)
