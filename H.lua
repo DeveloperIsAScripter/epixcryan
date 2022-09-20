@@ -9,6 +9,8 @@ local serv = win:Server("Faven.lua", "")
 
 local ma = serv:Channel("Tools")
 
+ma:Label("<Do Not Hold Out The Tool While Switching>")
+
 ma:Button("Kopeck",function()
     game:GetService("ReplicatedStorage").EquippedA:FireServer(1)
 end)
