@@ -233,9 +233,9 @@ moon:Label("<Make Sure You Are In Range With It>")
 
 moon:Seperator()
 
-moon:Toggle("Open Cool Egg",false,function(bool)
+moon:Toggle("Open Chroma Egg",false,function(bool)
         getgenv().Egg = bool
-    print('Open Cool Egg is: ', bool);
+    print('Open Chroma Egg is: ', bool);
     if bool then
         doEgg();
     end
