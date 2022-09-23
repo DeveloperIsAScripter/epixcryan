@@ -13,4 +13,4 @@ for anything that I have written/coded is being called being a skid, please do n
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/hellamane/epixcryan/main/source.lua"))()
 
-hviqz#0001
+hviqz#4825
