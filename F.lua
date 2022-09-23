@@ -201,7 +201,7 @@ z:Seperator()
 
 local cred = serv:Channel("Credits")
 
-cred:Label("Made by hviqz#0001")
+cred:Label("Made by hviqz#4825")
 
 cred:Seperator()
 
