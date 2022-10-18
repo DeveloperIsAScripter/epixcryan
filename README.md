@@ -11,8 +11,6 @@ for anything that I have written/coded is being called being a skid, please do n
 - easy race clicker
 - flood survival waves
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/hellamane/epixcryan/main/source.lua"))()
-
 Copyright (C) 2021	iK4oS
 
     This program is free software: you can redistribute it and/or modify
@@ -27,3 +25,5 @@ Copyright (C) 2021	iK4oS
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+``loadstring(game:HttpGet("https://raw.githubusercontent.com/hellamane/epixcryan/main/source.lua"))()
