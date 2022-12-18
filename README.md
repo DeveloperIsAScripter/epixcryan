@@ -2,7 +2,7 @@
 Hello and welcome to hellamane's service. This is a roblox scripting
 repository, and that is what you can expect on the repo, incase my
 name gets changed, you can save my repo if you want, taking credit
-for anything that I have written/coded is being called being a skid, please do not take my stuff without any credit.
+for anything that I have written/coded is skidding, please do not take my stuff without any credit.
 
 -- Supported Games --
 - cart ride around used car battery
