@@ -8,7 +8,8 @@ local Scripts = {
     [102131021] = "https://raw.githubusercontent.com/hellamane/epixcryan/main/F.lua",
     [10320240572] = "https://raw.githubusercontent.com/hellamane/epixcryan/main/S.lua",
     [4997792989] = "https://raw.githubusercontent.com/hellamane/epixcryan/main/H.lua",
-    [9988027602] = "https://raw.githubusercontent.com/hellamane/epixcryan/main/FJT.lua"
+    [9988027602] = "https://raw.githubusercontent.com/hellamane/epixcryan/main/FJT.lua",
+    [13665053842] = "https://raw.githubusercontent.com/hellamane/epixcryan/main/I.lua"
 }
 
 local Check = Scripts[game.PlaceId] or Scripts[game.GameId]
